@@ -4,7 +4,8 @@
   "description": "A minimal Electron application",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "package:windows": "electron-builder --win"
   },
   "repository": "https://github.com/electron/electron-quick-start",
   "keywords": [
@@ -17,6 +18,23 @@
   "author": "GitHub",
   "license": "CC0-1.0",
   "devDependencies": {
-    "electron": "6.0.0-beta.3"
+    "electron": "6.0.0-beta.4",
+    "electron-builder": "^20.40.2"
+  },
+  "build": {
+    "appId": "example.com",
+    "productName": "Electron",
+    "directories": {
+      "output": "dist"
+    },
+    "win": {
+      "target": {
+        "target": "nsis",
+        "arch": [
+          "x64",
+          "ia32"
+        ]
+      }
+    }
   }
 }
