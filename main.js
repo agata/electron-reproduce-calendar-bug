@@ -11,12 +11,13 @@ function createWindow () {
     width: 800,
     height: 600,
     webPreferences: {
-      nodeIntegration: true
+      webviewTag: true,
     }
   })
 
   // and load the index.html of the app.
-  mainWindow.loadURL('https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Input/file')
+  console.log(__dirname);
+  mainWindow.loadFile(__dirname + '/index.html');
 
   // Open the DevTools.
   // mainWindow.webContents.openDevTools()
